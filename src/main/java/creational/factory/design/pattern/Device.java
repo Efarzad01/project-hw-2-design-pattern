@@ -15,4 +15,5 @@ package creational.factory.design.pattern;
  */
 public interface Device {
 
+    void deviceType();
 }

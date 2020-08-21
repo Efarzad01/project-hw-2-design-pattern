@@ -18,6 +18,10 @@ public class User {
     private int userAge;
 
     public User(UserBuilder userBuilder){
+        this.userName = userBuilder.userName;
+        this.userEmail = userBuilder.userEmail;
+        this.userSSN = userBuilder.userSSN;
+        this.userAge = userBuilder.userAge;
 
     }
 
@@ -40,5 +44,31 @@ public class User {
 
     public static class UserBuilder {
 
+        private String userName;
+        private String userEmail;
+        private String userSSN;
+        private int userAge;
+
+
+        public UserBuilder(String userName, String userSSN, int age){
+            this.userName = userName;
+            this.userSSN = userSSN;
+            this.userAge = age;
+        }
+
+        public UserBuilder withEmail(String email){
+             this.userEmail = email;
+             return this;
+        }
+
+
+        public User build(){
+            return new User(this);
+        }
+
     }
+
+
+
+
 }
